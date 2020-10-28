@@ -1,0 +1,171 @@
+<html>
+<head>
+	<title></title>
+	<link rel="icon" href="Assets/Ice Cream.jpeg">
+	<link rel="stylesheet" type="text/css" href="Assets/bootstrap.css">
+	<style type="text/css">
+
+		body
+		{
+			background-color: rgb(250, 250, 250);
+		}
+
+		.resultDiv
+		{
+			text-align: center;
+		}
+
+		#container
+		{
+			padding-top: 50px;
+		}
+
+		#resultDivTengah
+		{
+			padding: 80px;
+		}
+
+		#birthdayHeader
+		{
+			font-size: 50px;
+			animation-name : animateHeader;
+			animation-duration : 1.5s;
+			animation-iteration-count : infinite;
+			animation-timing-function : ease-in-out;
+			padding-bottom: 80px;
+		}
+
+		.birthdayHeader
+		{
+			font-style: normal;
+		}
+
+		@keyframes animateHeader
+		{
+			0%
+			{
+				margin-top: 0px;
+			}
+
+			50%
+			{
+				margin-top: -40px;
+			}
+
+			100%
+			{
+				margin-top: 0px;
+			}
+		}
+
+		@keyframes animateNama
+		{
+			0%
+			{
+				opacity: 0;
+			}
+
+			50%
+			{
+				opacity: 1;
+			}
+
+			100%
+			{
+				opacity: 0;
+			}
+		}
+
+		.animationNama
+		{
+			animation-name : animateNama;
+			animation-duration : 1s;
+			animation-iteration-count : infinite;
+			animation-timing-function : ease-in-out;
+		}
+
+		.images
+		{
+			width: 90%;
+		}
+
+		#namaHeader
+		{
+			padding-bottom: 50px;
+		}
+
+		#firework1
+		{
+			padding-bottom: 50px;
+		}
+
+		.images2
+		{
+			width: 90%;
+			border-radius: 10px;
+			box-shadow: 8px 8px 10px lightgrey;
+			margin-bottom: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div id="resultDivKiri" class="resultDiv">
+						<img src="Assets/Fireworks.gif" class="images" id="firework1">
+						<img src="Assets/Cake.jpeg" class="images2">
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div id="resultDivTengah" class="resultDiv">
+						<h1 id="birthdayHeader"></h1>
+						<h1 id="namaHeader"></h1>
+						<h1>Sweet 17</h1>
+						<h5>Semoga semua yang diharapkan selama ini dapat tercapai dalam waktu dekat dan tetap menjadi anak rajin serta sayang orang tua</h5>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div id="resultDivKanan" class="resultDiv">
+						<img src="Assets/Ice Cream.jpeg" class="images2">
+						<img src="Assets/Fireworks2.gif" class="images">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	var nama = "Oriel Octavio";
+	var colors = ["Red", "Orange", "Gold", "Green", "Blue", "Magenta", "Purple"];
+
+	var headerText = "Happy Birthday";
+	var indexHeading = 0;
+	var indexColor = 0;
+
+	while(indexHeading < headerText.length)
+	{
+		if(indexColor == colors.length)
+		{
+			indexColor = 0;
+		}
+
+		document.querySelector("#birthdayHeader").innerHTML += `<i id="header` + indexHeading + `" class="birthdayHeader">` + headerText[indexHeading] + `</i>`;
+		document.querySelector("#header" + indexHeading).style.color = colors[indexColor];
+
+		indexHeading++;
+		indexColor++;
+	}
+
+	var indexNama = 0;
+	while(indexNama < nama.length)
+	{
+		document.querySelector("#namaHeader").innerHTML += `<i id="nama` + indexNama + `" class="animationNama">` + nama[indexNama] + `</i>`;
+		indexNama++;
+	}
+
+</script>
+</html>
